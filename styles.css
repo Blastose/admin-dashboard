@@ -25,15 +25,20 @@ body {
   color: white;
 
   display: grid;
-  grid-template-rows: min-content min-content min-content;
+  grid-template-rows: min-content min-content;
   gap: 24px;
 }
 
-.sidebar > ul {
+.nav {
+  display: grid;
+  gap: 24px;
+}
+
+.nav > ul {
   list-style-type: none;
 }
 
-.sidebar > .nav-links {
+.nav > .nav-links {
   padding: 0;
   margin: 0;
 
@@ -86,6 +91,10 @@ body {
   grid-area: trending;
 }
 
+.hide {
+  display: none;
+}
+
 @media only screen and (min-width: 800px) {
   .container {
     display: grid;
@@ -95,6 +104,10 @@ body {
     "sidebar header"
     "sidebar content"
     ;
+  }
+
+  #sidebar-btn {
+    display: none;
   }
 
   .content {
