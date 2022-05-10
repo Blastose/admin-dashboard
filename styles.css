@@ -74,11 +74,12 @@ body {
   grid-area: headertop;
 
   display: grid;
-  grid-template-columns: 6fr 1fr 1fr;
+  grid-template-columns: 6fr 1fr;
   grid-template-areas: 
-  "search notifications usericonsmall usershortened"
+  "search headertopright"
   ;
   align-items: center;
+  gap: 16px;
 }
 
 .search {
@@ -111,23 +112,30 @@ input[type=text] {
 }
 
 input[type=text]#input-search {
-  width: 80%;
+  box-sizing: border-box;
+  width: 100%;
   border-radius: 16px;
   padding: 4px 14px;
-  margin: 0px;
+  margin-right: 6px;
   background-color: rgb(199, 218, 235);
 }
 
+.header-top-right {
+  grid-area: headertopright;
+  justify-self: end;
+
+  display: flex;
+  gap: 8px;
+}
+
 .notifications {
-  grid-area: notifications;
+  display: flex;
+  align-items: center;
 }
 
 .user-icon-small {
-  grid-area: usericonsmall;
-}
-
-.user-shortened {
-  grid-area: usershortened;
+  display: flex;
+  align-items: center;
 }
 
 .header-bottom {
@@ -148,8 +156,6 @@ input[type=text]#input-search {
   "usericon welcomemsg"
   "usericon userfull"
   ;
-
-  align-items: center;
 }
 
 .user-icon {
@@ -162,6 +168,8 @@ input[type=text]#input-search {
 
 .user-full {
   grid-area: userfull;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .user-actions {
@@ -256,7 +264,7 @@ input[type=text]#input-search {
 
   display: grid;
   gap: 16px;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: min-content min-content;
 
   padding: 16px;
 }
@@ -268,6 +276,7 @@ input[type=text]#input-search {
   padding: 24px;
 
   display: grid;
+  grid-auto-rows: min-content;
   gap: 16px;
 
   box-shadow: 0px 1px 10px var(--box-shadow-color);
@@ -275,7 +284,7 @@ input[type=text]#input-search {
 
 .annoucement-info {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: min-content min-content;
 
   gap: 6px;
 }
@@ -294,7 +303,7 @@ input[type=text]#input-search {
   padding: 16px;
 
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: min-content min-content;
   gap: 16px;
 }
 
@@ -305,6 +314,7 @@ input[type=text]#input-search {
   padding: 16px;
 
   display: grid;
+  grid-auto-rows: min-content;
   gap: 8px;
 
   box-shadow: 0px 1px 10px var(--box-shadow-color);
@@ -312,17 +322,20 @@ input[type=text]#input-search {
 
 .trending-info {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: auto 4fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
   "icon name"
   "icon title"
   ;
   row-gap: 6px;
+  column-gap: 8px;
 }
 
 .trending-icon {
   grid-area: icon;
+  display: flex;
+  align-items: center;
 }
 
 .trending-name {
@@ -355,11 +368,10 @@ input[type=text]#input-search {
 
   .content {
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas: 
     "projects annoucements"
     "projects trending"
-    "none none"
     ;
   }
 }
