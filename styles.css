@@ -57,7 +57,117 @@ body {
 
 .header {
   background-color: rgb(211, 255, 255);
+  padding: 16px;
+
   grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "headertop"
+  "headerbottom"
+  ;
+  gap: 16px;
+}
+
+.header-top {
+  grid-area: headertop;
+
+  display: grid;
+  grid-template-columns: 6fr 1fr 1fr;
+  grid-template-areas: 
+  "search notifications usericonsmall usershortened"
+  ;
+  align-items: center;
+}
+
+.search {
+  padding: 0;
+  margin: 0;
+  grid-area: search;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 
+  "searchicon searchbar"
+  ;
+}
+
+.search-icon {
+  grid-area: searchicon;
+  background-color: blue;
+}
+
+.search-bar {
+  grid-area: searchbar;
+  border-radius: 6px;
+}
+
+#input-search {
+  width: 90%;
+}
+
+.notifications {
+  grid-area: notifications;
+}
+
+.user-icon-small {
+  grid-area: usericonsmall;
+}
+
+.user-shortened {
+  grid-area: usershortened;
+}
+
+.header-bottom {
+  grid-area: headerbottom;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "userlarge useractions"
+  ;
+}
+
+.user-large {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "usericon welcomemsg"
+  "usericon userfull"
+  ;
+
+  align-items: center;
+}
+
+.user-icon {
+  grid-area: usericon;
+}
+
+.welcome-message {
+  grid-area: welcomemsg;
+}
+
+.user-full {
+  grid-area: userfull;
+}
+
+.user-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: 30px;
+  justify-self: end;
+  align-self: center;
+  gap: 16px;
+}
+
+.btn-actions {
+  background-color: rgb(192, 191, 255);
+  border: none;
+  text-decoration: none;
+  border-radius: 9px;
+  margin: 0;
 }
 
 .content {
@@ -191,11 +301,12 @@ body {
 .trending-info {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
   "icon name"
   "icon title"
   ;
+  row-gap: 6px;
 }
 
 .trending-icon {
