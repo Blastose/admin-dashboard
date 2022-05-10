@@ -67,7 +67,7 @@ body {
   "headertop"
   "headerbottom"
   ;
-  gap: 16px;
+  gap: 24px;
 }
 
 .header-top {
@@ -220,7 +220,7 @@ input[type=text]#input-search {
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(200px, min-content);
   gap: 15px;
 }
 
