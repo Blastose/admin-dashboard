@@ -62,7 +62,7 @@ body {
   grid-area: header;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
   "headertop"
   "headerbottom"
@@ -91,11 +91,14 @@ body {
   grid-template-areas: 
   "searchicon searchbar"
   ;
+  align-items: center;
+  gap: 8px;
 }
 
 .search-icon {
   grid-area: searchicon;
-  background-color: blue;
+  display: flex;
+  align-items: center;
 }
 
 .search-bar {
@@ -103,8 +106,16 @@ body {
   border-radius: 6px;
 }
 
-#input-search {
-  width: 90%;
+input[type=text] {
+  all: unset;
+}
+
+input[type=text]#input-search {
+  width: 80%;
+  border-radius: 16px;
+  padding: 4px 14px;
+  margin: 0px;
+  background-color: rgb(199, 218, 235);
 }
 
 .notifications {
@@ -132,7 +143,7 @@ body {
 .user-large {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
   "usericon welcomemsg"
   "usericon userfull"
@@ -164,6 +175,7 @@ body {
 
 .btn-actions {
   background-color: rgb(192, 191, 255);
+  box-shadow: 1px 1px 4px var(--box-shadow-color);
   border: none;
   text-decoration: none;
   border-radius: 9px;
@@ -343,10 +355,11 @@ body {
 
   .content {
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas: 
     "projects annoucements"
     "projects trending"
+    "none none"
     ;
   }
 }
