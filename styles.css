@@ -397,7 +397,7 @@ input[type=text]#input-search:focus {
   grid-area: title;
 }
 
-.hide {
+.hide-sidebar {
   display: none;
 }
 
@@ -461,5 +461,9 @@ input[type=text]#input-search:focus {
     "projects annoucements"
     "projects trending"
     ;
+  }
+
+  .hide-sidebar {
+    display: grid;
   }
 }
