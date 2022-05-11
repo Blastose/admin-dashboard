@@ -25,7 +25,7 @@ body {
 .sidebar {
   background-color: rgb(9, 165, 255);
   grid-area: sidebar;
-  padding: 16px;
+  padding: 24px;
   color: white;
 
   display: grid;
@@ -74,7 +74,7 @@ body {
   grid-area: headertop;
 
   display: grid;
-  grid-template-columns: 6fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-areas: 
   "search headertopright"
   ;
@@ -142,20 +142,14 @@ input[type=text]#input-search {
   grid-area: headerbottom;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0px 1fr;
   grid-template-areas: 
-  "userlarge useractions"
+  "none useractions"
   ;
 }
 
 .user-large {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: 
-  "usericon welcomemsg"
-  "usericon userfull"
-  ;
+  display: none;
 }
 
 .user-icon {
@@ -173,10 +167,11 @@ input[type=text]#input-search {
 }
 
 .user-actions {
+  grid-area: useractions;
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: 30px;
-  justify-self: end;
+  justify-self: center;
   align-self: center;
   gap: 16px;
 }
@@ -364,6 +359,29 @@ input[type=text]#input-search {
 
   #sidebar-btn {
     display: none;
+  }
+
+  .user-large {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "usericon welcomemsg"
+    "usericon userfull"
+    ;
+  }
+
+  .header-bottom {
+    grid-area: headerbottom;
+  
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "userlarge useractions"
+    ;
+  }
+
+  .user-actions {
+    justify-self: end;
   }
 
   .content {
