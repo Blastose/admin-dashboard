@@ -37,6 +37,7 @@ body {
 }
 
 #sidebar-btn {
+  margin-left: auto;
   cursor: pointer;
 }
 
