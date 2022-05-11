@@ -330,7 +330,7 @@ input[type=text]#input-search {
 .trending-icon {
   grid-area: icon;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .trending-name {
