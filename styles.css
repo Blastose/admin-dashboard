@@ -34,9 +34,13 @@ body {
   gap: 24px;
 }
 
+#sidebar-btn {
+  cursor: pointer;
+}
+
 .nav {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
 .nav > ul {
@@ -50,11 +54,38 @@ body {
   margin: 0;
 
   display: grid;
-  gap: 8px;
+  gap: 16px;
+}
+
+.nav-links > li > img {
+  width: 24;
+  height: auto;
+}
+
+.nav-links > li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebar-svg-color {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(310deg) brightness(104%) contrast(101%);
+}
+
+.sidebar-svg-color::selection {
+  background: none;
 }
 
 .logo {
   font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo > img {
+  width: 43px;
+  height: auto;
 }
 
 .header {
@@ -395,6 +426,7 @@ input[type=text]#input-search {
     grid-template-areas: 
     "userlarge useractions"
     ;
+    align-items: center;
   }
 
   .user-actions {
