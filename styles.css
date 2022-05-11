@@ -40,6 +40,7 @@ body {
 
 .nav > ul {
   list-style-type: none;
+  cursor: pointer;
 }
 
 .nav > .nav-links {
@@ -177,12 +178,18 @@ input[type=text]#input-search {
 }
 
 .btn-actions {
-  background-color: rgb(192, 191, 255);
+  color: white;
+  background-color: rgb(171, 169, 255);
   box-shadow: 1px 1px 4px var(--box-shadow-color);
   border: none;
   text-decoration: none;
   border-radius: 9px;
   margin: 0;
+  cursor: pointer;
+}
+
+.btn-actions:hover {
+  background-color: rgb(145, 145, 211);
 }
 
 .content {
