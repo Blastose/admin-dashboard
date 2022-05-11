@@ -209,11 +209,9 @@ input[type=text]#input-search:focus {
 
 .user-actions {
   grid-area: useractions;
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: 30px;
-  justify-self: center;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   gap: 16px;
 }
 
@@ -225,6 +223,9 @@ input[type=text]#input-search:focus {
   text-decoration: none;
   border-radius: 9px;
   margin: 0;
+  padding: 8px 0px;
+  width: 33%;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -445,7 +446,11 @@ input[type=text]#input-search:focus {
   }
 
   .user-actions {
-    justify-self: end;
+    justify-content: flex-end;
+  }
+
+  .btn-actions {
+    width: min(200px, 33%);
   }
 
   .content {
