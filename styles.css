@@ -26,14 +26,13 @@ body {
 .sidebar {
   background-color: rgb(98, 170, 230);
   grid-area: sidebar;
-  padding: 24px;
+  padding: 0px;
   color: white;
 }
 
 .sidebar-contents {
   display: grid;
   grid-template-rows: min-content min-content;
-  gap: 24px;
 }
 
 #sidebar-btn {
@@ -42,8 +41,8 @@ body {
 }
 
 .nav {
-  display: grid;
-  gap: 32px;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav > ul {
@@ -56,8 +55,8 @@ body {
   padding: 0;
   margin: 0;
 
-  display: grid;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-links > li > img {
@@ -67,8 +66,16 @@ body {
 
 .nav-links > li {
   display: flex;
-  align-items: center;
+  padding: 12px 20px;
   gap: 20px;
+}
+
+.nav-links > li:hover {
+  background-color: rgb(79, 149, 206);
+}
+
+.active {
+  background-color: rgb(79, 149, 206);
 }
 
 .sidebar-svg-color {
@@ -81,6 +88,7 @@ body {
 
 .logo {
   font-size: 24px;
+  padding: 16px 16px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -440,7 +448,12 @@ input[type=text]#input-search:focus {
   }
 
   .sidebar-contents {
-    position: fixed;
+    position: sticky;
+    top: 0;
+  }
+
+  .nav {
+    gap: 32px;
   }
 
   .header {
