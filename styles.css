@@ -24,7 +24,7 @@ body {
 }
 
 .sidebar {
-  background-color: rgb(9, 165, 255);
+  background-color: rgb(98, 170, 230);
   grid-area: sidebar;
   padding: 24px;
   color: white;
@@ -397,7 +397,7 @@ input[type=text]#input-search:focus {
   grid-area: title;
 }
 
-.hide-sidebar {
+.hide-small {
   display: none;
 }
 
@@ -463,7 +463,7 @@ input[type=text]#input-search:focus {
     ;
   }
 
-  .hide-sidebar {
+  .hide-small {
     display: grid;
   }
 }
