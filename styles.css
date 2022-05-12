@@ -96,7 +96,7 @@ body {
   padding: 16px;
   position: sticky;
   top: 0px;
-  box-shadow: 0px 4px 4px -4px var(--box-shadow-color);
+  box-shadow: 0px 5px 4px -4px var(--box-shadow-color);
   z-index: 1;
   grid-area: header;
   display: grid;
@@ -240,7 +240,7 @@ input[type=text]#input-search:focus {
   grid-area: content;
 
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: min-content min-content min-content;
   grid-template-areas: 
   "projects"
   "annoucements"
@@ -251,6 +251,16 @@ input[type=text]#input-search:focus {
 .content-title {
   font-size: 16px;
   font-weight: bold;
+}
+
+.content-title::before {
+  content: "⮟";
+  margin-right: 8px;
+}
+
+.content-title.hide::before {
+  content: "➤";
+  margin-right: 8px;
 }
 
 .projects {
@@ -466,5 +476,13 @@ input[type=text]#input-search:focus {
 
   .hide-small {
     display: grid;
+  }
+
+  .content-title::before {
+    content: "";
+  }
+  
+  .content-title.hide::before {
+    content: "";
   }
 }
